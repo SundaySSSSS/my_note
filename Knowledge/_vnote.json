@@ -1,0 +1,59 @@
+{
+    "created_time": "2017-10-16T03:26:42Z",
+    "files": [
+    ],
+    "sub_directories": [
+        {
+            "name": "C and C++"
+        },
+        {
+            "name": "Linux"
+        },
+        {
+            "name": "Tools"
+        },
+        {
+            "name": "Python"
+        },
+        {
+            "name": "Code"
+        },
+        {
+            "name": "Windows"
+        },
+        {
+            "name": "DesignPattern"
+        },
+        {
+            "name": "码表"
+        },
+        {
+            "name": "QT"
+        },
+        {
+            "name": "树莓派"
+        },
+        {
+            "name": "SDL"
+        },
+        {
+            "name": "系统架构师"
+        },
+        {
+            "name": "人工智能"
+        },
+        {
+            "name": "数据库"
+        },
+        {
+            "name": "操作系统"
+        },
+        {
+            "name": "网络"
+        },
+        {
+            "name": "hack"
+        }
+    ],
+    "version": "1"
+}

@@ -1,0 +1,26 @@
+{
+    "created_time": "2017-11-15T07:15:53Z",
+    "files": [
+    ],
+    "sub_directories": [
+        {
+            "name": "基础操作"
+        },
+        {
+            "name": "开发环境"
+        },
+        {
+            "name": "spacemacs"
+        },
+        {
+            "name": "org_mode"
+        },
+        {
+            "name": "lisp"
+        },
+        {
+            "name": "windows环境配置"
+        }
+    ],
+    "version": "1"
+}

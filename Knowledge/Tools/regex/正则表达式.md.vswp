@@ -1,0 +1,33 @@
+vnote_backup_file_826537664 F:/知识库/MyNote/Knowledge/Tools/regular expression/正则表达式.md
+# 正则表达式
+
+## grep基本用法:
+`grep -n 'keyword' target.txt`
+从target.txt的所有行中, 筛选所有带有keyword的行, 并显示行号
+
+grep选项:
+
+-v	选出不匹配的行
+例如:    `grep -v 'keyword' target.txt	(在target.txt中选出没有keyword的行)`
+
+-n 显示行号
+例如:    `grep -n 'keyword' target.txt	在target.txt中选出有keyword的行, 并显示行号`
+
+## 正则表达式相关:
+符号 | 功能 | 	使用实例 | 意义
+----|-------|------------|------
+`[]`	| 搜索字符集 |   `grep -n 't[ae]st' target.txt`	 | 在target.txt中选出包含tast或者test的行
+`[^]	` | ([ ]符号内的^)反向选择 | `grep -n '[^a-z]oo' target.txt`	| 在target.txt中选出带有oo,但oo前面不是小写字母的行
+`^	` | ([ ]符号外的^)在行首搜索 |  `grep -n '^the' target.txt` | 	在target.txt中选出行首为the的行
+`$`	| 在行尾搜索 |   `grep -n '\.$' target.txt` |	在target.txt中选出行尾为.的行
+`.` | 	一定有一个字符 |  `grep -n 'g..d' target.txt` | 	在target.txt中选出带有g??d的字符串,?表示一定有一个字符(不能为0个)
+`*` | 	重复前一个字符0到无穷次 |  `grep -n 'go*g' target.txt	` | 在target.txt中选出带有gg,gog,goog,gooog...的行
+`+` | 	重复前一个字符1到无穷次 |  `grep -n 'go\+g' target.txt	` | 在target.txt中选出带有gog,goog,gooog...的行
+`?` | 	重复前一个字符0或1次 |  `grep -n 'go\?g' target.txt	` | 在target.txt中选出带有gg, gog的行
+`{m,n}` | 	 连续n到m个的前一个字符 |  `grep -n 'go\{2, 3\}g' target.txt` |	在target.txt中选出goog和gooog的行, 如果写为{n}则表示n到无穷多个前一个字符
+`()` | 归组操作, 将括号内的内容视为一个字符(组) | `grep -n 'read\(file\)\?' target.txt` | 选出read, readfile的行
+`|` | 二选一操作符 | `grep -n` 
+备注:
+正则表达式和普通通配符是不同的, 例如:
+*在正则表达式中表示重复前一个字符0到无穷次,
+在通配符中表示0到无限多个字符

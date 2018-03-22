@@ -1,0 +1,20 @@
+{
+    "created_time": "2018-01-13T02:08:10Z",
+    "files": [
+    ],
+    "sub_directories": [
+        {
+            "name": "DeepLearning"
+        },
+        {
+            "name": "科学计算工具"
+        },
+        {
+            "name": "TensorFlow"
+        },
+        {
+            "name": "JupyterNote"
+        }
+    ],
+    "version": "1"
+}
