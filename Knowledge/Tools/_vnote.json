@@ -65,6 +65,9 @@
         },
         {
             "name": "PhotoShop"
+        },
+        {
+            "name": "ssh"
         }
     ],
     "version": "1"
