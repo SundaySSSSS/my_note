@@ -11,3 +11,10 @@ screen.blit(font_sur, (0, 0))
 
 ## 获取行高
 `line_height = font.get_linesize()`
+
+## 显示中文
+是否能够显示中文和使用的字体有关
+在mac下, 可以使用Arial Unicode字体, 可以正常显示中文
+```
+font = pygame.font.Font("res/font/Arial Unicode.ttf", 40)
+```
