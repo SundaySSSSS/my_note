@@ -117,7 +117,7 @@ point-max: 当前缓冲区的最后一个字符的位置
 
 ### 把LISP函数转化为Emacs命令
 #### 使用intercative
-需要把函数等级到Emacs中,
+需要把函数登记到Emacs中,
 需要使用`interactive`函数
 ```lisp
 (interactive "prompt-string")
