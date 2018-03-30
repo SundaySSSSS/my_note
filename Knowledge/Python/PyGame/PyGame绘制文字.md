@@ -18,3 +18,7 @@ screen.blit(font_sur, (0, 0))
 ```
 font = pygame.font.Font("res/font/Arial Unicode.ttf", 40)
 ```
+在python2中, 传入render的字符串需要加前缀u, 例如
+```
+font_sur = font.render(u"汉字", True, (255, 0, 0))
+```
