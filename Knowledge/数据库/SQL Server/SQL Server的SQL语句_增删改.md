@@ -1,4 +1,4 @@
-# SQL Server的T-SQL语句
+# SQL Server的T-SQL语句_增删改
 ## 基础
 ### T-SQL
 T-SQL语句是SQL的增强版
@@ -21,15 +21,11 @@ SELECT等
 CTEATE TABLE, DROP TABLE 等
 
 ### SQL中的运算符
-算术运算
-+-*/(整除) %(取余)
-赋值运算
-=
-逻辑运算
-AND OR NOT
-
-比较运算符
 ```
+算术运算: +-*/(整除) %(取余)
+赋值运算: =
+逻辑运算: AND OR NOT
+比较运算符:
 =
 >
 <
@@ -82,6 +78,19 @@ SELECT '王五', 5, 1 UNION
 ```
 
 ### 删(DELETE)
+#### 基本删除语法
+``` SQL
+--基本语法:
+DELETE [FROM] 表名 [WHERE <删除条件>]
+--示例:
+DELETE FROM student where name = 'cxy'
+```
+注意, 删除时要先删除子表中的数据, 再删除主表中的数据
+##### 删除整个表
+``` SQL
+TRUNCATE TABLE 表名
+```
+此删除不可恢复!!! 慎用
 
 ### 改(UPDATE)
 #### 基本示例
@@ -93,7 +102,6 @@ UPDATE student SET saddress='上海' WHERE saddress='北京' --将所有地址�
 UPDATE test_scores SET scores=scores+5 WHERE scores<=95 -- 将所有分数低于95分的提高5分
 ```
 
-## 查
-
-
 ## 导入导出
+在数据库上右键->任务->导入/导出即可
+可视化操作, 很简单, 支持文本, xls等
