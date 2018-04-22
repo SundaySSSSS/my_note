@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
     std::cout << "Before library unload." << std::endl;
 
     // Releasing last reference to the library, so that it gets unloaded
-    on_unload.clear(); // <- on_unload是一个静态方法指针(add), 怎么会有clear方法?
+    on_unload.clear(); // <- on_unload是一个boost::function对象, clear可能会清空(尚未在文档中查明), 从而调用析构函数
     std::cout << "After library unload." << std::endl;
 }
 ```
