@@ -54,8 +54,32 @@
             "attachments": [
             ],
             "created_time": "2018-04-22T05:34:22Z",
-            "modified_time": "2018-04-22T05:34:22Z",
+            "modified_time": "2018-04-22T06:54:14Z",
             "name": "2_6_Tutorial_在动态库卸载时调用回调.md"
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-04-22T06:56:05Z",
+            "modified_time": "2018-04-22T07:08:04Z",
+            "name": "2_7_Tutorial_在库中查找某类型的符号.md"
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-04-22T07:08:28Z",
+            "modified_time": "2018-04-22T07:21:05Z",
+            "name": "2_8_Tutorial_库的引用计数进阶.md"
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-04-22T07:23:22Z",
+            "modified_time": "2018-04-22T07:23:22Z",
+            "name": "2_9_Tutorial_在WIndows DLL中引入C函数.md"
         }
     ],
     "sub_directories": [
