@@ -1,5 +1,4 @@
-# boost插件式编程 - Tutorial
-## 插件基础
+# 2_1_Tutorial_插件基础
 定义接口:
 ``` C++
 //文件example/tutorial_common/my_plugin_api.hpp
@@ -80,3 +79,5 @@ Constructing my_plugin_sum
 plugin->calculate(1.5, 1.5) call:  3
 Destructing my_plugin_sum ;o)
 ```
+
+
