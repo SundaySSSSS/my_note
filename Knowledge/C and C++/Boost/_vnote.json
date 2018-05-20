@@ -5,6 +5,12 @@
     "sub_directories": [
         {
             "name": "Boost插件式编程"
+        },
+        {
+            "name": "编译安装基本用法"
+        },
+        {
+            "name": "使用实例"
         }
     ],
     "version": "1"

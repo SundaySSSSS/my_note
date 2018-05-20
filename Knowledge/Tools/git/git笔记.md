@@ -4,8 +4,10 @@
 1. 安装git（https://git-scm.com/download/win）
 2. 进入命令行，配置Git
 	输入:
-	        `git config --global user.name "caoxy"`
-			`git config --global user.email "sxinyus@126.com"`
+```
+git config --global user.name "caoxy"
+git config --global user.email "sxinyus@126.com"
+```
 
     完成后可以通过 `git config --list`进行查看
     如果想让git输出彩色的字符, 可以使用如下选项
