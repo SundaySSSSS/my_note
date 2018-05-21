@@ -68,6 +68,9 @@
         },
         {
             "name": "ssh"
+        },
+        {
+            "name": "MathJax"
         }
     ],
     "version": "1"
