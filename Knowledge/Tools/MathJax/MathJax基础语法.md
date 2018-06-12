@@ -19,7 +19,7 @@ $$\alpha + \Gamma$$
 如果需要伸缩(这里伸缩指在表达式变高后自动变高)，
 就需要用 \left(…\right) 来进行自动伸缩，如写 $\left(\frac{\sqrt x}{y^3}\right)$ 
 
-\left 和 \right 的用法在这些中有用：三种括号，绝对值符号，范数符号 $\vert x \vert $，$\Vert x \Vert$ ，尖角符号 $\langle x \rangle$ ⟨x⟩，向上下取整符号 $\lceil x\rceil$ 和 $\lfloor x\rfloor$。如果只需显示一半的符号，可以用 . 来表示另一边为空，如$\left. \frac 1 2 \right \rbrace$ 
+\left 和 \right 的用法在这些中有用：三种括号，绝对值符号 $\vert x \vert $，范数符号，$\Vert x \Vert$ ，尖角符号 $\langle x \rangle$ ⟨x⟩，向上下取整符号 $\lceil x\rceil$ 和 $\lfloor x\rfloor$。如果只需显示一半的符号，可以用 . 来表示另一边为空，如$\left. \frac 1 2 \right \rbrace$ 
 当然也可以手动调整括号的大小，如$\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$ 
 ## 求和与积分
 求和符号:$\sum_1^n$
