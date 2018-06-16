@@ -228,11 +228,33 @@ int main(int argc, char* argv[])
 ## 进程相关API
 ### API一览
 ```C++
-WinExec
-CreateProcess
+WinExec()
+CreateProcess()
+GetWindowThreadProcessId() //通过hWnd获取pid
+OpenProcess()
+TerminateProcess()
+
+//使用以下函数必须包含Tlhelp32.h
+//进程枚举
+CreateToolhelp32Snapshot()
+Process32First()
+Process32Next()
+//线程枚举
+CreateToolhelp32Snapshot()
+Thread32First()
+Thread32Next()
+//进程中DLL枚举
+CreateToolhelp32Snapshot()
+Module32First()
+Module32Next()
+
+//暂停/恢复进程
+SuspendThread() <-进程恢复就是操作进程的所有线程
+ResumeThread()
 ```
 
 ### 示例
+#### 打开进程
 使用WinExec打开进程
 ```C++
 WinExec("C:\\windows\\system32\\notepad.exe", SW_SHOW);
@@ -260,14 +282,161 @@ int main(int argc, char* argv[])
 }
 ```
 
+#### 关闭进程
+下面的例子可以关闭一个记事本进程(title必须为"无标题 - 记事本")
+```C++
 
+int ProcessUtils::closeProcess(string title)
+{
+	HWND hWnd = FindWindow(NULL, title.c_str());
+	if (hWnd == NULL)
+		return -1;
+	DWORD dwPid = 0;
+	GetWindowThreadProcessId(hWnd, &dwPid);
+	if (dwPid == 0)
+		return -1;
+	HANDLE hHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwPid);
+	if (hHandle == NULL)
+		return -1;
+	BOOL bRet = TerminateProcess(hHandle, 0);
+	if (bRet)
+	{
+		MessageBox(NULL, "成功", NULL, MB_OK);
+	}
+	CloseHandle(hHandle);
+	return 0;
+}
 
+int main(int argc, char** argv)
+{
+	string title = "无标题 - 记事本";
+	int ret = ProcessUtils::closeProcess(title);
+	getchar();
+	return 0;
+}
+```
 
+#### 进程枚举
+```C++
+int ProcessUtils::listAllProcess()
+{
+	//创建进程快照
+	HANDLE hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+	if (hSnap == INVALID_HANDLE_VALUE)
+	{
+		printf("CreateToolhelp32Snapshot Error");
+		return -1;
+	}
+	PROCESSENTRY32 Pe32 = { 0 };
+	Pe32.dwSize = sizeof(PROCESSENTRY32);
+	BOOL bRet = Process32First(hSnap, &Pe32);
+	int i = 0;
+	while (bRet)
+	{
+		printf("%03d : pid = %d, %s\n", i, Pe32.th32ProcessID, Pe32.szExeFile);
+		bRet = Process32Next(hSnap, &Pe32);
+		++i;
+	}
+	CloseHandle(hSnap);
+	return 0;
+}
+```
 
+#### 指定进程中加载的DLL枚举
+```C++
+int ProcessUtils::listDllInProcess(int pid)
+{
+	int nPid = pid;
+	if (nPid == 0)
+		return -1;
+	MODULEENTRY32 Me32 = { 0 };
+	Me32.dwSize = sizeof(MODULEENTRY32);
 
+	//创建模块快照
+	HANDLE hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, nPid);
+	if (hSnap == INVALID_HANDLE_VALUE)
+	{
+		printf("CreateToolhelp32Snapshot error\n");
+		return -1;
+	}
 
+	BOOL bRet = Module32First(hSnap, &Me32);
+	while (bRet)
+	{
+		printf("module: %s, path = %s\n", Me32.szModule, Me32.szExePath);
+		bRet = Module32Next(hSnap, &Me32);
+	}
+	CloseHandle(hSnap);
+	return 0;
+}
+```
+上面的程序无法打开系统进程加载的动态库
+为解决这个问题, 可以将权限提升至"SeDebugPrivilege"
 
+#### 提升权限, 以枚举DLL
+```C++
 
+int ProcessUtils::ImprovePrivilege()
+{
+	HANDLE hToken = NULL;
+	BOOL bRet = OpenProcessToken(GetCurrentProcess(), TOKEN_ALL_ACCESS, &hToken);
+	if (bRet)
+	{
+		TOKEN_PRIVILEGES tp;
+		tp.PrivilegeCount = 1;
+		LookupPrivilegeValue(NULL, SE_DEBUG_NAME, &tp.Privileges[0].Luid);
+		tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+		AdjustTokenPrivileges(hToken, FALSE, &tp, sizeof(tp), NULL, NULL);
+		CloseHandle(hToken);
+		return 0;
+	}
+	return -1;
+}
+```
+即使加上上面代码后, 仍然需要以管理员权限运行程序, 才能正常打开
 
+#### 暂停/恢复进程
+```C++
 
+int ProcessUtils::suspendResumeThread(int pid, int ctl)
+{
+	int nPid = pid;
+	if (nPid <= 0)
+		return -1;
+	//遍历进程中的所有线程
+	HANDLE hSnap = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, nPid);
+	if (hSnap == INVALID_HANDLE_VALUE)
+	{
+		printf("CreateToolhelp32Snapshot Error\n");
+		return -1;
+	}
 
+	THREADENTRY32 Te32 = { 0 };
+	Te32.dwSize = sizeof(THREADENTRY32);
+	BOOL bRet = Thread32First(hSnap, &Te32);
+	while (bRet)
+	{
+		if (Te32.th32OwnerProcessID == nPid)
+		{
+			HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, FALSE, Te32.th32ThreadID);
+			if (ctl == 0)
+			{	//暂停线程
+				DWORD ret = SuspendThread(hThread);
+				printf("suspend thread...ret = %d\n", ret);
+			}
+			else if (ctl == 1)
+			{	//恢复线程
+				
+				DWORD ret = ResumeThread(hThread);
+				printf("resume thread... ret = %d\n", ret);
+			}
+			CloseHandle(hThread);
+		}
+		bRet = Thread32Next(hSnap, &Te32);
+	}
+	CloseHandle(hSnap);
+	return 0;
+}
+```
+多次suspend线程, 也需要同样的resume次数才能让线程恢复
+可以查阅ResumeThread返回值的意义
