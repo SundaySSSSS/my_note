@@ -34,7 +34,7 @@ class Reader : public QObject
     Q_OBJECT
 public:
     Reader() {}
- 
+public slots:
     void receiveNewspaper(const QString & name)
     {
         qDebug() << "Receives Newspaper: " << name;
