@@ -8,7 +8,12 @@
     "sub_directories": [
         {
             "name": "Knowledge"
+        },
+        {
+            "name": "Plan"
         }
+    ],
+    "tags": [
     ],
     "version": "1"
 }
