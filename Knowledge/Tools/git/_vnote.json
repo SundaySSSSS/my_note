@@ -7,7 +7,9 @@
             ],
             "created_time": "2017-10-20T06:04:42Z",
             "modified_time": "2018-02-05T09:38:05Z",
-            "name": "git笔记.md"
+            "name": "git笔记.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -15,7 +17,9 @@
             ],
             "created_time": "2018-02-11T03:48:53Z",
             "modified_time": "2018-02-11T03:48:53Z",
-            "name": "GitHub基础.md"
+            "name": "GitHub基础.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -23,7 +27,19 @@
             ],
             "created_time": "2018-02-13T06:22:49Z",
             "modified_time": "2018-03-22T09:57:29Z",
-            "name": "git忽略规则.gitignore.md"
+            "name": "git忽略规则.gitignore.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-07-08T14:11:11Z",
+            "modified_time": "2018-07-08T14:11:11Z",
+            "name": "Github语言设定.gitattributes.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
