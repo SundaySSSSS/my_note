@@ -8,6 +8,9 @@
         },
         {
             "name": "SQL Server"
+        },
+        {
+            "name": "Oracle"
         }
     ],
     "version": "1"

@@ -29,7 +29,7 @@ LIBPATH +=D:/development/oracleBase/product/11.2.0/client_2/oci/lib/msvc
 执行qmake , 重新构建
 成功后, 在目录
 `D:\Qt\Qt5.5.1\5.5\Src\qtbase\plugins\sqldrivers`
-下会生成四个文件
+下会生成四个文件(有时不在这个目录下, 可以用everything搜索一下)
 ```
 libqsqloci.a
 libqsqlocid.a
