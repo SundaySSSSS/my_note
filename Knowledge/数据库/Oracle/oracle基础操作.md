@@ -75,18 +75,47 @@ spool d:\b.sql <-文件开始建立, 等待用户输入
 spool off <-停止输入
 
 ## 表格操作
-创建表格:
-create table people(id number(9) primary key, name varchar2(40) not null);
+### 显示所有表格
+`select * from tab;`
 
-插入数据:
-insert into people values(1, "caoxinyu");
+### 创建表格:
+`create table people(id number(9) primary key, name varchar2(40) not null);`
 
-简单查找:
-select * from people;
+### 删除表格:
+`drop table [table_name];`
+例如:
+`drop table test;`
 
+问题:
+在oracle中drop掉了一张表，表是删除了，但是会自动生成一个表名为BIN$DIb3jDFOQA2CVQWgNxEPXg==$0的数据库表。
 
+解决：
+这个是oracle10g以上的闪回技术，类似回收站，你可以用sql命令永久删除：
+```sql
+SQL>purge table "BIN$DIb3jDFOQA2CVQWgNxEPXg==$0";
+```
 
+### 插入数据:
+`insert into people values(1, 'cxy');`
 
+### 更新数据
+```sql
+UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值;
+```
+例如:
+```sql
+UPDATE Person SET FirstName = 'Fred' WHERE LastName = 'Wilson';
+```
+
+### 简单查找:
+`select * from people;`
+
+### 判断表格是否存在:
+`select count(*) from user_tables where table_name='PEOPLE';`
+其中表格名为PEOPLE, 必须全为大写
+
+### 表格信息
+`desc table_name;`
 
 
 
