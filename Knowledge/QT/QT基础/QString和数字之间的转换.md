@@ -1,5 +1,6 @@
 # QString和数字之间的转换
-## 把QString转换为 double类型
+## QString -> 数字
+### 把QString转换为 double类型
 
 方法1.QString str="123.45";
 ```
@@ -11,7 +12,7 @@ bool ok;
 double d;
 d=QString("1234.56e-02").toDouble(&ok); //ok=true;d;12.3456.
 ```
-## 把QString转换为float形
+### 把QString转换为float形
 
 1.
 ```
@@ -25,7 +26,7 @@ bool ok;
 float d=str.toFloat(&ok); //转换是被时返回0.0,ok=false;
 ```
 
-## 把QString形转换为整形
+### 把QString形转换为整形
 
 注意：基数默认为10。当基数为10时，并且基数必须在2到36之间。如果基数为0，若字符串是以0x开头的就会转换为16进制，若以0开头就转换为八进制，否则就转换为十进制。
 ```
@@ -34,14 +35,22 @@ bool ok;
 int dec=str.toInt(&ok,10); //dec=255 ; ok=rue
 int hex =str.toInt(&ok,16); //hex=255;ok=true;
 ```
-
-## 常整形转换为Qstring形
+## 数字 -> QString
+### 整形转换为QString形
 ```
 long a =63;
 QString str=QString::number(a,16); //str="3f";
 QString str=QString::number(a,16).toUpper(); //str="3F";
 ```
-## Qstring 转换char*问题
+### 浮点数转QString
+```C++
+double a = 10.3;
+QString str = QString::number(a, 'f', 6);
+```
+str最终为: "10.300000"
+
+## 其他转化
+### QString 转换char*问题
 
 方法一:
 ```
@@ -55,7 +64,7 @@ const char *p = qstr.toStdString().data();
 转换过来的是常量
 
 
-## 把当前时间转化为QString
+### 把当前时间转化为QString
 ```
 public QDateTime qdate = QDateTime.currentDateTime();
 datetime = qdate.toString("yyyy年MM月dd日ddddhh:mm:ss");

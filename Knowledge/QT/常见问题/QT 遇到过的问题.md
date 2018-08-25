@@ -29,3 +29,10 @@ HEADERS  += mainwindow.h     hintdialog.h
 方法二：
 注意SOURCES HEADERS 参数中新加文件前空格数是否为4 的倍数。不是的话，一定显示“The .pro file could not be parsed”
 ```
+
+## 出现使用QQueue等容器时, 输入自定义类型不支持的问题
+```C++
+#include <QMetaType>
+qRegisterMetaType<QList<QString> > ("QList<FileInfo>");
+```
+上述代码注册了QList<QString>类型
