@@ -1,6 +1,6 @@
 # C++读写文件
 
-```
+``` C++
 #include "stdafx.h"  
 #include <vector>  
 #include <string>  

@@ -5,7 +5,7 @@ YUVUV即YYYYYYYYYYYYYYYYUVUVUVUV的格式
 YUV即YYYYYYYYYYYYYYYYUUUUVVVV格式
 经过测试可用
 
-```
+``` C++
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,7 +1,8 @@
 # [C][转]循环队列
 
 [queue.h]
-```
+
+``` C++
 
 #ifndef __QUEUE_H_  
 #define __QUEUE_H_  
@@ -26,7 +27,8 @@ bool Dequeue(PQUEUE Q, int *val);
 
 
 [queue.c]
-```
+
+``` C++
 #include<stdio.h>  
 #include<stdlib.h>  
 #include"malloc.h"  
