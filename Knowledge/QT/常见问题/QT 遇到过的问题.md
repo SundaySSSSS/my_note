@@ -36,3 +36,16 @@ HEADERS  += mainwindow.h     hintdialog.h
 qRegisterMetaType<QList<QString> > ("QList<FileInfo>");
 ```
 上述代码注册了QList<QString>类型
+
+## undefine reference XXX vtable
+目前看上去是QT的问题, 
+解决方法1, 将文件从工程里删除, 再重新加载一次, 在qmake可能会好
+如果还不行, qmake + 重新构建
+解决方法2:
+可能是pro文件中, 有文件
+
+## 编译正常, 但无法启动, 提示 找不到 plugin "windows", 并提示reinstall 可能解决问题
+目前来看, 参照QT的发布流程进行一次发布, 将platforms文件夹放到编译生成exe的目录下, 能够解决
+(platforms下有qwindowsd.dll或qwindows.dll)
+
+
