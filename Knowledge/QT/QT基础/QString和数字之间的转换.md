@@ -45,7 +45,8 @@ QString str=QString::number(a,16).toUpper(); //str="3F";
 ### 浮点数转QString
 ```C++
 double a = 10.3;
-QString str = QString::number(a, 'f', 6);
+QString str = QString::number(a, 'f', 6);    //小数形式
+QString str2 = QString::number(a, 'e', 2);    //科学计数法
 ```
 str最终为: "10.300000"
 
