@@ -83,19 +83,6 @@
             "name": "[C++]XML读取和写入.md",
             "tags": [
             ]
-        },
-        {
-            "attachment_folder": "20181118205442911_25625",
-            "attachments": [
-                {
-                    "name": "WavFileUtils.rar"
-                }
-            ],
-            "created_time": "2018-11-18T12:54:17Z",
-            "modified_time": "2018-11-18T13:13:03Z",
-            "name": "[C++]解析wav文件.md",
-            "tags": [
-            ]
         }
     ],
     "sub_directories": [
