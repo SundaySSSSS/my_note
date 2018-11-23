@@ -7,6 +7,9 @@
             "name": "C and C++"
         },
         {
+            "name": "Python"
+        },
+        {
             "name": "C#"
         },
         {
@@ -14,9 +17,6 @@
         },
         {
             "name": "Tools"
-        },
-        {
-            "name": "Python"
         },
         {
             "name": "Code"
