@@ -110,6 +110,16 @@
             "name": "QT 注册热键.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-12-04T09:28:57Z",
+            "modified_time": "2018-12-04T09:33:17Z",
+            "name": "QT执行bat或shell命令.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [

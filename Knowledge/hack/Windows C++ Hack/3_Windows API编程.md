@@ -47,8 +47,9 @@ RegEnumValue
 ### 示例: 系统启动项管理
 系统启动项的注册表位置是:
 `计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
-这个示例并不好用, 读不到, 写不进去, 且必须用管理员权限运行才能Open成功, 咱不知道问题所在
-```C++
+这个示例必须用管理员权限运行才能Open成功
+
+``` C++
 
 #define REG_RUN "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 

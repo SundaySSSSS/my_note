@@ -1,4 +1,11 @@
 # C++读写文件
+## 使用fstream
+
+``` C++
+
+```
+
+## 使用ifstream和ofstream
 
 ``` C++
 #include "stdafx.h"  
