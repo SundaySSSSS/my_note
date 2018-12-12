@@ -19,13 +19,16 @@
             "name": "VisualStudio"
         },
         {
-            "name": "批处理"
+            "name": "命令行"
         },
         {
             "name": "Windows编程"
         },
         {
             "name": "系统配置"
+        },
+        {
+            "name": "注册表"
         }
     ],
     "version": "1"
