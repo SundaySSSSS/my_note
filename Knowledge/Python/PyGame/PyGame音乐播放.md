@@ -1,6 +1,6 @@
 # PyGame音乐播放
 
-```
+``` python
 # -*- coding: utf-8 -*-
 import pygame
 import sys

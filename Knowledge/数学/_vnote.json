@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "3D数学"
+        },
+        {
+            "name": "傅里叶变换"
         }
     ],
     "version": "1"

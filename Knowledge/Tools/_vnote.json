@@ -71,6 +71,9 @@
         },
         {
             "name": "MathJax"
+        },
+        {
+            "name": "openmp"
         }
     ],
     "version": "1"
