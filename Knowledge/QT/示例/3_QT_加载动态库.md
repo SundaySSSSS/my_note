@@ -1,4 +1,14 @@
 # 3_QT_加载动态库
+## 项目中用到的方法
+
+```
+LIBS += -L../bin -lipps
+LIBS += -L../bin -lippcore
+
+DESTDIR = ../bin
+```
+
+## 基础
 带加载的动态库为:
 libtest.a
 test.dll
