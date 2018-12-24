@@ -71,6 +71,9 @@
         },
         {
             "name": "管理"
+        },
+        {
+            "name": "emacs"
         }
     ],
     "version": "1"
