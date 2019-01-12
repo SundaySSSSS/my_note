@@ -74,6 +74,9 @@
         },
         {
             "name": "emacs"
+        },
+        {
+            "name": "Office"
         }
     ],
     "version": "1"
