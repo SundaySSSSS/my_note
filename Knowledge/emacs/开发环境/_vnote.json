@@ -7,7 +7,9 @@
             ],
             "created_time": "2017-11-22T01:22:33Z",
             "modified_time": "2017-11-22T01:22:33Z",
-            "name": "用etags进行代码导航.md"
+            "name": "用etags进行代码导航.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -15,7 +17,9 @@
             ],
             "created_time": "2017-11-25T03:01:04Z",
             "modified_time": "2017-11-25T03:01:04Z",
-            "name": "ecb相关.md"
+            "name": "ecb相关.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -23,7 +27,9 @@
             ],
             "created_time": "2017-11-23T00:45:50Z",
             "modified_time": "2017-11-23T02:38:40Z",
-            "name": "emacs开发环境搭建(ECB).md"
+            "name": "emacs开发环境搭建(ECB).md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -31,7 +37,9 @@
             ],
             "created_time": "2017-12-02T07:43:03Z",
             "modified_time": "2017-12-02T07:43:03Z",
-            "name": "emacs python mode.md"
+            "name": "emacs python mode.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -39,7 +47,9 @@
             ],
             "created_time": "2017-12-24T11:31:31Z",
             "modified_time": "2017-12-24T11:31:31Z",
-            "name": "[转]emacs代码缩进解决方案.md"
+            "name": "[转]emacs代码缩进解决方案.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -47,7 +57,22 @@
             ],
             "created_time": "2018-03-27T06:04:54Z",
             "modified_time": "2018-03-27T06:04:54Z",
-            "name": "emacs中Python环境搭建.md"
+            "name": "emacs中Python环境搭建.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "20190113003436599_7465",
+            "attachments": [
+                {
+                    "name": "glo62wb.zip"
+                }
+            ],
+            "created_time": "2019-01-12T16:33:03Z",
+            "modified_time": "2019-01-12T16:37:29Z",
+            "name": "emacs中使用global浏览代码.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
