@@ -1,0 +1,28 @@
+{
+    "created_time": "2019-01-18T07:02:58Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-01-18T07:03:13Z",
+            "modified_time": "2019-01-18T07:03:49Z",
+            "name": "第一章 UML简介.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-01-18T07:04:46Z",
+            "modified_time": "2019-01-18T07:04:46Z",
+            "name": "第二章 理解面向对象.md",
+            "tags": [
+            ]
+        }
+    ],
+    "sub_directories": [
+    ],
+    "version": "1"
+}
