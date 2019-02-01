@@ -15,4 +15,9 @@
 
 5, 重启即可
 
-此方法在ubuntu1804下貌似不好用了
+## Ubuntu1804之后的特殊问题
+在Ubuntu1804后, 使用了GDM3人机交互登录界面, 上述方法需要切换到lightdm方法才能够生效
+安装lightdm:
+`apt install lightdm`
+在安装过程中的提示中, 选择使用lightdm. 再按照上述步骤操作即可
+

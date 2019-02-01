@@ -16,6 +16,9 @@
 解压filesys.tar.gz文件:
 `tar xzvf filesys.tar.gz`
 
+解压.tar.bz2文件
+`tar   -jxvf    xx.tar.bz2`
+
 通常解压.tar的文件不需要z选项
 
 ## 文件查找
