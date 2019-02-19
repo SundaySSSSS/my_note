@@ -1,0 +1,10 @@
+vnote_backup_file_826537664 E:/MyDocument/notes/MyNote/Knowledge/Python/系统相关/Python获取剪贴板中的图片.md
+# Python获取剪贴板中的图片
+
+``` Python
+from PIL import ImageGrab # pip install pillow
+
+image = ImageGrab.grabclipboard()
+image.save('pic.png')
+
+```
