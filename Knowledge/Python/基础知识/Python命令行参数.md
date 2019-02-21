@@ -13,11 +13,11 @@ test.py 文件代码如下：
 # -*- coding: UTF-8 -*-
 import sys
 
-print '参数个数为:', len(sys.argv), '个参数。'
-print '参数列表:', str(sys.argv)
-执行以上代码，输出结果为：
+print('参数个数为:', len(sys.argv), '个参数。')
+print('参数列表:' + str(sys.argv))
 ```
 
+执行以上代码，输出结果为：
 `$ python test.py arg1 arg2 arg3`
 参数个数为: 4 个参数。
 参数列表: ['test.py', 'arg1', 'arg2', 'arg3']

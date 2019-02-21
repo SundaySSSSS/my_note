@@ -24,3 +24,15 @@ arguments << "-style" << "fusion";
 QProcess *myProcess = new QProcess(parent);
 myProcess->start(program, arguments);
 ```
+
+## 例子 在Qt中调用windows命令删除文件夹
+``` C++
+QString deletePath = "C:\test";
+QProcess p(NULL);
+QString cmd = "rmdir /s /q " + deletePath + "\n";
+p.start("cmd");
+p.waitForStarted();
+p.write(cmd.toLocal8Bit());
+p.closeWriteChannel();
+p.waitForFinished();
+```
