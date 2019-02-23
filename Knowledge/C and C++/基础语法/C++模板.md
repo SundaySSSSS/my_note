@@ -362,6 +362,7 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 demo2.h文件
 存放类的声明和函数的声明
 
+``` C++
 #include <iostream>
 using namespace std;
 
@@ -393,7 +394,7 @@ private:
     T b;
 };
 
-
+```
 
 demo2.hpp文件
 包括模板函数的实现
