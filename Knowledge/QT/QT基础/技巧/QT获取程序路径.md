@@ -1,16 +1,17 @@
 # QT获取程序路径
-##　获取程序路径
+
+## 获取程序路径
 获取程序所在路径，QCoreApplication 类里就实现了相关的功能：
 
-QString QCoreApplication::applicationDirPath()
-1
+`QString QCoreApplication::applicationDirPath()`
+
 比如我们有一个程序在：
 
-C:/Qt/examples/tools/regexp/regexp.exe
-1
-那么 qApp->applicationDirPath() 的结果是：
+`C:/Qt/examples/tools/regexp/regexp.exe`
 
-C:/Qt/examples/tools/regexp
+那么 `qApp->applicationDirPath() `的结果是：
+
+`C:/Qt/examples/tools/regexp`
 
 ## 当前工作目录
 QDir 提供了一个静态函数 currentPath() 可以获取当前工作目录，函数原型如下：
