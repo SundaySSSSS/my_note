@@ -20,6 +20,9 @@
         },
         {
             "name": "windows环境配置"
+        },
+        {
+            "name": "配置"
         }
     ],
     "version": "1"
