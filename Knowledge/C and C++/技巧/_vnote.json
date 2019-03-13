@@ -66,6 +66,16 @@
             "name": "C++获取数值类型的最大最小值.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-03-13T15:02:02Z",
+            "modified_time": "2019-03-13T15:09:15Z",
+            "name": "C++类中其他类型的定义技巧.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [

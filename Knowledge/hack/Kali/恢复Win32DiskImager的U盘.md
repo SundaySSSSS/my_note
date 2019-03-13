@@ -5,12 +5,14 @@
 2、查看机器磁盘 
 DISKPART> list disk
 
+```
 磁盘 ### 状态 大小 可用 Dyn Gpt 
 -------- ------------- ------- ------- --- --- 
 磁盘 0 联机 238 GB 1024 KB 
 磁盘 1 联机 28 GB 0 B
 
 DISKPART> 
+```
 根据大小可判断U盘为磁盘1 
 3、选择磁盘1 
 DISKPART> select disk 1 
