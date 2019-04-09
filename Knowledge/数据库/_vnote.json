@@ -11,6 +11,9 @@
         },
         {
             "name": "Oracle"
+        },
+        {
+            "name": "Redis"
         }
     ],
     "version": "1"

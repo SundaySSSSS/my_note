@@ -71,6 +71,9 @@
         },
         {
             "name": "openmp"
+        },
+        {
+            "name": "openDDS"
         }
     ],
     "version": "1"
