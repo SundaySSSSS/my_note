@@ -74,6 +74,9 @@
         },
         {
             "name": "openDDS"
+        },
+        {
+            "name": "msgpack"
         }
     ],
     "version": "1"
