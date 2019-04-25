@@ -22,3 +22,11 @@ func main() {
 windows下会出现exe, linux,mac下会出现可执行的hello文件.
 
 也可以使用`go run hello.go`来执行, 使用类似脚本的形式.不推荐.
+
+## 注意事项
+Go严格区分大小写
+Go一行不能写两条语句
+Go中import的包没有使用, 不能编译通过. 声明但不使用的变量也不能编译通过
+
+## 转义字符(escape char)
+\t \n \

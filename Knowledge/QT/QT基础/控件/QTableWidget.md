@@ -34,3 +34,20 @@ hideColumn(1);
 QTableWidgetItem* pItem = new QTableWidgetItem();
 pItem->setFlags(pItem->flags() & (~Qt::ItemIsEditable));
 ```
+
+## 均分各列
+``` C++
+ tableWidget->horizontalHeader()->setStretchLastSection(true); //就是这个地方
+ tableWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+```
+## 整行选中：
+``` C++
+tableWidget->setSelectionBehavior ( QAbstractItemView::SelectRows); //设置选择行为，以行为单位
+tableWidget->setSelectionMode ( QAbstractItemView::SingleSelection); //设置选择模式，选择单行
+```
+## 删除选中的整行
+``` C++
+int rowIndex = m_pAttrbuteList->currentRow();
+ if (rowIndex != -1)
+     tableWidget->removeRow(rowIndex);
+```
