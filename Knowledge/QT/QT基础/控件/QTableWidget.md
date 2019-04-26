@@ -29,11 +29,17 @@ m_pTable->setCellWidget(0, 1, pCombox);
 hideColumn(1);
 ```
 
-## 禁止编辑某些项
+## 禁止编辑
+### 禁止编辑某些项
 ``` C++
 QTableWidgetItem* pItem = new QTableWidgetItem();
 pItem->setFlags(pItem->flags() & (~Qt::ItemIsEditable));
 ```
+### 全部禁止编辑
+``` C++
+ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+```
+
 
 ## 均分各列
 ``` C++
