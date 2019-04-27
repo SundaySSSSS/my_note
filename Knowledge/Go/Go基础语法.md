@@ -15,13 +15,25 @@ Go中package语句和import的语句之间不能有全局变量定义
 ### float32 float64
 ### string
 ### array slice
+array是静态数据, 定义之后大小不可变
 ``` Go
-var x[10] int //array
+var x[10]int //array
 x[8] = 10
 fmt.Printf("%v", x) //%v表示打印值, 数据会被打印所有元素
 
-
+//或者:
+x := [3]int{0, 1, 2}
 ```
+slice是动态数组, 大小可变
+``` Go
+var x []int
+```
+slice可以用一个已经定义好的array生成
+``` Go
+x := [5]int{0, 1, 2, 3, 4}
+y := x[1:3]    //前闭后开区间, y的值为1, 2
+```
+
 ### map
 ### complex64 complex128
 ``` Go

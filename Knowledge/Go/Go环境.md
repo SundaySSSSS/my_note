@@ -25,3 +25,7 @@ windows下会出现exe, linux,mac下会出现可执行的hello文件.
 
 ## GOPATH
 GOPATH是一个需要手动配置的环境变量, 用于存放外接导入的包
+
+## VScode 配置
+在mac下, 先安装VSCode
+
