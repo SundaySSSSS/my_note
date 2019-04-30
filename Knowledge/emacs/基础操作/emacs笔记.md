@@ -136,6 +136,13 @@ ESC p     上一条命令
 C-c C-c    相当于普通shell中的Ctrl+C
 ```
 
+或者使用eshell或者term, ansi-term
+```
+ESC x eshell
+ESC x term
+ESC x ansi-term
+```
+
 ## Telnet模式
 ```
 Esc x telnet 进入telnet模式
