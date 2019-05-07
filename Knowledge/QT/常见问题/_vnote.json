@@ -50,6 +50,16 @@
             "name": "QT 调用WindowsAPI.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-05-07T01:12:38Z",
+            "modified_time": "2019-05-07T01:13:41Z",
+            "name": "mac下QT找不到sdk的问题.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
