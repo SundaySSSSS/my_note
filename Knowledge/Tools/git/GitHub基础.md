@@ -21,5 +21,7 @@
 可以执行如下命令获取
 `git clone https://github.com/用户名/HelloWorld`
 
-
+## Fork 和 pull request
+fork: 把别人的库复制一份放到自己的库中, 自己可以正常的push, 如果想要把自己的改动提交给原作者, 可以pull request, 对方可以接受, 也可以不接受
+![](_v_images/20190510090721110_864621631.png)
 

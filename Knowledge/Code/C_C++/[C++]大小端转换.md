@@ -1,8 +1,10 @@
 # C++大小端转换
 ``` C++
+#include <assert.h>
+
 //16位的转化
 template <typename T16>
-T16 Endian::swap16(const T16 &v)
+T16 swap16(const T16 &v)
 {
 	assert(sizeof(T16) == 2);
 	return ((v & 0xff) << 8) | (v >> 8);
@@ -10,7 +12,7 @@ T16 Endian::swap16(const T16 &v)
 
 //32位的转化
 template <typename T32>
-T32 Endian::swap32(const T32 &v)
+T32 swap32(const T32 &v)
 {
 	assert(sizeof(T32) == 4);
  
@@ -22,7 +24,7 @@ T32 Endian::swap32(const T32 &v)
 
 //64位的转化
 template <typename T64>
-T64 Endian::swap64(const T64 &v)
+T64 swap64(const T64 &v)
 {
 	assert(sizeof(T64) == 8);
  
@@ -38,7 +40,7 @@ T64 Endian::swap64(const T64 &v)
 
 //任意位的转化, 效率较低
 template <typename T>
-T Endian::swap(const T &v)
+T swap(const T &v)
 {
 	T r;
 	int size 			= sizeof(v);
@@ -54,4 +56,25 @@ T Endian::swap(const T &v)
  
 	return r;
 }
+
+void EndianSwap(uint8 *pData, int startIndex, int length)
+{
+    if (length <= 1)
+    {
+        return;
+    }
+
+    int i,cnt,end,start;
+    cnt = length / 2;
+    start = startIndex;
+    end  = startIndex + length - 1;
+    uint8 tmp;
+    for (i = 0; i < cnt; i++)
+    {
+        tmp            = pData[start+i];
+        pData[start+i] = pData[end-i];
+        pData[end-i]   = tmp;
+    }
+}
+
 ```
