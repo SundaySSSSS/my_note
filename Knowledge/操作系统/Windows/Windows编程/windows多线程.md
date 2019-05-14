@@ -4,21 +4,26 @@
 ```C++
 #include <windows.h>
 #include <stdio.h>
- 
+
 static int number=10;
 CRITICAL_SECTION CriticalSection;
- 
+
 DWORD WINAPI ThreadOne(LPVOID lpParameter)
 {
     printf("窗口1售票开始:\n");
     while(1)
     {
-         EnterCriticalSection(&CriticalSection);  
+         EnterCriticalSection(&CriticalSection);
          if(number>0)
          {
              printf("窗口1售出第%d张票...\n",number);
              number--;
-             Sleep(1000);        
+             Sleep(1000);
+         }
+         else
+         {
+             LeaveCriticalSection(&CriticalSection);
+             break;
          }
          LeaveCriticalSection(&CriticalSection);
          Sleep(100);
@@ -26,7 +31,7 @@ DWORD WINAPI ThreadOne(LPVOID lpParameter)
     return 0;
 }
 DWORD WINAPI ThreadTwo(LPVOID lpParameter)
-{ 
+{
     printf("窗口2售票开始:\n");
     while(1)
     {
@@ -37,12 +42,17 @@ DWORD WINAPI ThreadTwo(LPVOID lpParameter)
             Sleep(1000);
             number--;
         }
+        else
+        {
+            LeaveCriticalSection(&CriticalSection);
+            break;
+        }
         LeaveCriticalSection(&CriticalSection);
         Sleep(100);
     }
     return 0;
 }
- 
+
 int main()
 {
     HANDLE HOne,HTwo;
@@ -63,14 +73,15 @@ int main()
         else
         {
             continue;
-        }    
+        }
     }
-    
+
     return 0;
 }
 ```
 
 ## 等待线程终止
-```C++
- WaitForSingleObject(handle, INFINITE);	//handle为CreateThread的返回值
- ```
+
+``` C++
+WaitForSingleObject(handle, INFINITE);	//handle为CreateThread的返回值
+```

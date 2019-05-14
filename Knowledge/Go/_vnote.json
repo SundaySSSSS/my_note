@@ -40,6 +40,36 @@
             "name": "Go面向对象.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-05-14T09:11:14Z",
+            "modified_time": "2019-05-14T09:12:03Z",
+            "name": "Go接口(interface).md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-05-14T09:12:10Z",
+            "modified_time": "2019-05-14T09:20:52Z",
+            "name": "Go多态.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-05-14T09:54:00Z",
+            "modified_time": "2019-05-14T12:36:05Z",
+            "name": "Go goroutine.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
