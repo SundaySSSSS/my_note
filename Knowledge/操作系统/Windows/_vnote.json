@@ -7,9 +7,6 @@
             "name": "SVN"
         },
         {
-            "name": "Excel"
-        },
-        {
             "name": "ActiveX"
         },
         {
@@ -29,6 +26,9 @@
         },
         {
             "name": "注册表"
+        },
+        {
+            "name": "Office"
         }
     ],
     "version": "1"
