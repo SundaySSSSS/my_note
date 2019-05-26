@@ -20,6 +20,16 @@
             "name": "QT操作oracle数据库.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-05-20T09:46:27Z",
+            "modified_time": "2019-05-20T09:47:15Z",
+            "name": "Qt连接mysql提示错误.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
