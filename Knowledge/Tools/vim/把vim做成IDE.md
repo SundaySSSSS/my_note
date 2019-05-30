@@ -69,4 +69,27 @@ https://github.com/fatih/vim-go
 ## python编码插件
 https://github.com/python-mode/python-mode
 
+## 浏览代码
+使用tagbar插件
+https://github.com/majutsushi/tagbar
+tagbar插件依赖于Universal Ctags
+在Mac上安装Ctags:
+``` shell
+brew tap universal-ctags/universal-ctags
+brew install --HEAD universal-ctags
+```
+
+### 基本用法
+启动:
+`:TagbarToggle`
+
+## 高亮感兴趣的单词
+https://github.com/lfv89/vim-interestingwords
+默认使用`<leader>`k来高亮显示当前光标所在的单词
+官方说明:
+```
+Highlight with <Leader>k
+Navigate with n and N
+Clear highlights with <Leader>K
+```
 
