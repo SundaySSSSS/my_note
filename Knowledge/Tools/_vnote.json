@@ -80,6 +80,9 @@
         },
         {
             "name": "vnote"
+        },
+        {
+            "name": "emacs"
         }
     ],
     "version": "1"
