@@ -1,7 +1,7 @@
 # map用法整理
 * 插入元素:
 
-```
+``` C++
 map<string, string> map_data;
 map_data.insert(map<string, string>::value_type ("msg_type", "UPLOAD"));
 map_data.insert(map<string, string>::value_type ("data", "1234"));
@@ -9,7 +9,7 @@ map_data.insert(map<string, string>::value_type ("data", "1234"));
 
 * 遍历:
 
-```
+``` C++
 map<string, string>::iterator iter;
 for(iter = map_data.begin(); iter != map_data.end(); iter++)
 	cout<<iter->first<<" "<<iter->second<<endl;
@@ -17,7 +17,7 @@ for(iter = map_data.begin(); iter != map_data.end(); iter++)
 
 * 根据Key查找某Value
 
-```
+``` C++
 map<string, string>::iterator iter;
 iter = map_data.find("msg_type");
 if(iter != map_data.end())
@@ -26,7 +26,7 @@ if(iter != map_data.end())
 
 * map的基本操作函数:
 
-```
+``` C++
      C++ maps是一种关联式容器，包含“关键字/值”对
      begin()         返回指向map头部的迭代器
      clear(）        删除所有元素
