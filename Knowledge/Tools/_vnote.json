@@ -83,6 +83,9 @@
         },
         {
             "name": "emacs"
+        },
+        {
+            "name": "SDL"
         }
     ],
     "version": "1"
