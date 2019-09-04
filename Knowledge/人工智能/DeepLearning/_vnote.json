@@ -7,7 +7,9 @@
             ],
             "created_time": "2018-01-13T02:09:09Z",
             "modified_time": "2018-01-13T02:09:25Z",
-            "name": "Logistic回归(L1W1).md"
+            "name": "Logistic回归(L1W1).md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -15,7 +17,9 @@
             ],
             "created_time": "2018-01-13T02:11:18Z",
             "modified_time": "2018-01-13T02:11:21Z",
-            "name": "神经网络-单隐藏层(L1W2).md"
+            "name": "神经网络-单隐藏层(L1W2).md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -23,7 +27,9 @@
             ],
             "created_time": "2018-01-13T02:11:52Z",
             "modified_time": "2018-01-13T02:12:14Z",
-            "name": "深层神经网络(L1W3).md"
+            "name": "深层神经网络(L1W3).md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -31,7 +37,9 @@
             ],
             "created_time": "2018-01-13T02:12:29Z",
             "modified_time": "2018-01-14T01:29:05Z",
-            "name": "深度学习的实用层面(L2W1).md"
+            "name": "深度学习的实用层面(L2W1).md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -39,7 +47,9 @@
             ],
             "created_time": "2018-01-13T06:58:21Z",
             "modified_time": "2018-01-13T09:54:07Z",
-            "name": "加快深度学习算法(L2W2).md"
+            "name": "加快深度学习算法(L2W2).md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -47,15 +57,19 @@
             ],
             "created_time": "2018-01-14T01:27:32Z",
             "modified_time": "2018-01-14T02:07:12Z",
-            "name": "超参数调试_正则化_优化(L2W3).md"
+            "name": "超参数调试_正则化_优化(L2W3).md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
             "attachments": [
             ],
             "created_time": "2018-01-21T01:59:19Z",
-            "modified_time": "2018-01-21T01:59:19Z",
-            "name": "卷积神经网络.md"
+            "modified_time": "2019-09-04T15:38:16Z",
+            "name": "卷积神经网络.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
