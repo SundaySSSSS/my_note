@@ -83,6 +83,9 @@
         },
         {
             "name": "SDL"
+        },
+        {
+            "name": "docker"
         }
     ],
     "version": "1"
