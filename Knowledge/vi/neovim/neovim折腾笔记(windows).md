@@ -20,3 +20,4 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 上面的命令需要在windows powershell中运行
 
+### 下载Universal Ctags
