@@ -21,3 +21,10 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 上面的命令需要在windows powershell中运行
 
 ### 下载Universal Ctags
+github下载， 解压并添加环境变量
+
+### 下载Ag（the_silver_searcher）
+github下载， 解压并添加环境变量
+
+### 下载fzf.exe
+github下载， 放到C:\Users\sxiny\.fzf\bin中
