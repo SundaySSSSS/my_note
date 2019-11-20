@@ -83,6 +83,9 @@
         },
         {
             "name": "docker"
+        },
+        {
+            "name": "vi"
         }
     ],
     "version": "1"
