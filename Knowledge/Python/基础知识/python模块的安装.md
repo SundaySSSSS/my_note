@@ -5,6 +5,11 @@
 直接在此目录下`python setup.py install`即可
 
 ## whl安装
+### 自动安装
+下载whl文件后， 在命令行中：
+`pip install xxx.whl`
+
+### 手动安装
 以requests模块为例, 下载
 `requests-2.7.0-py2.py3-none-any.whl`文件
 将后缀改为zip
