@@ -4,10 +4,13 @@
     ],
     "sub_directories": [
         {
-            "name": "爬虫"
+            "name": "Python环境"
         },
         {
             "name": "基础知识"
+        },
+        {
+            "name": "爬虫"
         },
         {
             "name": "PyGame"
