@@ -1,11 +1,14 @@
 # docker安装与配置
 ## Ubuntu中
 ### apt-get方式
-`sudo apt-get install docker.io`
-`source /etc/bash_completion.d/docker.io`
+`sudo apt-get install -y docker.io`
+安装完毕后，启动docker
+`systemctl start docker`
+设置开机就启动docker
+`systemctl enable docker`
+查看docker是否安装成功
+`docker version`
 
-查看安装情况
-`sudo docker.io version`
 
 ### 使用docker维护的版本
 1, 先检查APT的HTTPS支持, 查看
