@@ -15,3 +15,11 @@
 用WIN+R快捷键打开运行窗口，输入命令：cmd并回车进入命令行窗口。
 
 接着输入命令：ipconfig /flushdns回车后执行刷新本地dns缓存数据即可。
+
+## 可参考如下的地址， 据说是HK的
+```
+192.30.253.112  www.github.com
+151.101.77.194  github.global.ssl.fastly.net
+185.199.111.153 assets-cdn.github.com
+151.101.76.133  avatars0.githubusercontent.com
+```
