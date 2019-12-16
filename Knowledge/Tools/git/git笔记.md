@@ -9,10 +9,12 @@ git config --global user.name "caoxy"
 git config --global user.email "sxinyus@126.com"
 ```
 
-    完成后可以通过 `git config --list`进行查看
-    如果想让git输出彩色的字符, 可以使用如下选项
-    `git config --global color.ui auto`
-    此命令会使`~/.gitconfig`中追加相关配置项
+完成后可以通过 `git config --list`进行查看
+如果想让git输出彩色的字符, 可以使用如下选项
+```
+git config --global color.ui auto
+```
+此命令会使`~/.gitconfig`中追加相关配置项
 
 3. SVN等其他版本控制系统记录的是每一次的变动，但是git记录的整个变动的文件
 4. Git的核心框架：Git本地仓库中维护的三棵树
@@ -34,7 +36,7 @@ git config --global user.email "sxinyus@126.com"
 2. 将文件添加到暂存区域
 3. 假如工作目录上存在一个文件`README.md`，在命令行上输入`git add README.md`
 将所有被修改的文件一次性提交到暂存区：
-`git add .`
+`git add *`
 4. 将文件提交到Git仓库
 输入`git commit -m "add a readme file"`	将所有暂存区域中的文件提交到Git仓库中
 如果说明很多, 可以使用如下方法写多行说明
@@ -45,10 +47,25 @@ git commit -m '
 '
 ```
 
+5. 查看工作区状态
+```
+git status
+```
+
 总结：
 将工作目录的文件放到Git仓库的步骤
 `Step One -> git add 文件名`
 `Step Two -> git commit -m "你做了什么"`
+### .git文件夹中的文件介绍
+branches 分支目录
+config 定义项目特有的配置选项
+description 仅供git web程序使用, 如github, gitlab等
+HEAD 指示当前的分支
+hooks 包含git钩子文件
+info 包含一个全局排除文件(exclude文件)
+objects 存放所有数据内容, 有info和pack两个子文件夹
+refs 存放指向数据(分支)的提交对象指针
+index 保存暂存区信息
 
 ## Git的克隆操作：复制其他的Git库
 cd到你想要复制到的目录，输入：

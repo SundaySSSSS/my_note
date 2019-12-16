@@ -57,14 +57,14 @@ baJson = doc.toJson();
 ### 获取根节点
 ``` C++
 QJsonObject rootObj;
-if (!GetRootFronJson(rootObj, baJson))
+if (!GetRootFromJson(rootObj, baJson))
 {   //获取根节点失败
     return false;
 }
 ```
 
 ``` C++
-bool GetRootFronJson(QJsonObject &rootObj, const QByteArray &baJson)
+bool GetRootFromJson(QJsonObject &rootObj, const QByteArray &baJson)
 {
     bool bRet = true;
     QJsonParseError jsonError;
