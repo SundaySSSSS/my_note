@@ -25,6 +25,13 @@ template <class T> void swap(T& a, T& b)
 }
 ```
 
+调用:
+``` C++
+int a = 1;
+int b = 2;
+swap(a, b);    //直接调用即可, 不用指定类型, 可以自行推导
+```
+
 ## 1 基础的类模板
 类模板，可以定义相同的操作，拥有不同数据类型的成员属性。
 通常使用template来声明
@@ -249,35 +256,31 @@ int main()
 
 ## 4 内部声明友元模板函数+外部定义友元模板函数
 如果普通的模板函数声明在内的内部，定义在类的外部，不管是否处于同一个文件，就跟普通的函数一样，不会出现任何错误提示。但是如果是友元函数就会出现报错，是因为有二次编译这个机制存在。
-4.1 模板类和模板函数的机制
+### 4.1 模板类和模板函数的机制
 在编译器进行编译的时候，编译器会产生类的模板函数的声明，当时实际确认类型后调用的时候，会根据调用的类型进行再次帮我们生成对应类型的函数声明和定义。我们称之为二次编译。同样，因为这个机制，会经常报错找不到类的函数的实现。在模板类的友元函数外部定义时，也会出现这个错误。解决方法是 “ 类的前置声明和函数的前置声明 ”。
 
 按照普通模板函数的样式处理友元函数
 
-
+``` C++
 #include <iostream>
 using namespace std;
 
 
 template <typename T>
 class Complex {
-    
     //友元函数实现运算符重载
     friend ostream& operator<<(ostream &out, Complex<T> &c);
-    
 public:
     Complex(T a, T b);
-    
     //运算符重载+
     Complex<T> operator+(Complex<T> &c);
-    
     //普通加法函数
     Complex<T> myAdd(Complex<T> &c1, Complex<T> &c2);
-    
 private:
     T a;
     T b;
 };
+
 
 //友元函数的实现
 template <typename T>
@@ -315,14 +318,11 @@ int main()
 {
     Complex<int> c1(1,2);
     Complex<int> c2(3,4);
-    
     Complex<int> c = c1 + c2;
-    
     cout<<c<<endl;
-    
     return 0;
 }
-
+```
 
 
 
