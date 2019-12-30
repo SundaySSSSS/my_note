@@ -19,6 +19,9 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
 上面的命令需要在windows powershell中运行
+或者将plug.vim放到~\AppData\Local\nvim\autoload\中
+plug.vim可以从github上下载
+`https://github.com/junegunn/vim-plug`
 
 ### 下载Universal Ctags
 github下载， 解压并添加环境变量
