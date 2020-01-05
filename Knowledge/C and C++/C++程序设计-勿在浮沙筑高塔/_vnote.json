@@ -60,6 +60,16 @@
             "name": "variadic templates(C++11)数量不确定的模板参数.md",
             "tags": [
             ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2020-01-05T14:49:05Z",
+            "modified_time": "2020-01-05T14:52:43Z",
+            "name": "vptr-vtbl-虚指针和虚函数表.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
