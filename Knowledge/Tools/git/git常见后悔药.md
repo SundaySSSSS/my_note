@@ -28,7 +28,13 @@ git reset --soft | --mixed | --hard <commit_id>
 --hard    源码也会回退到某个版本,commit和index 都会回退到某个版本.(注意,这种方式是改变本地代码仓库源码)
 
 一般情况下mixed即可, 
-即:
+例如:
 ```
-git reset --mixed <commit_id>
+git reset --mixed 46e3e952
 ```
+
+## 撤销push
+```
+git revert <commit_id>
+```
+revert 之后你的本地代码会回滚到指定的历史版本
