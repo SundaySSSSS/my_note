@@ -17,11 +17,21 @@ func main() {
 ```
 
 ## 编译
+### go build
 如果go文件为hello.go
 则在命令行可以直接`go build hello.go`
 windows下会出现exe, linux,mac下会出现可执行的hello文件.
+如果使用
+`go build -o xxx.exe`
+来进行编译, 则会编译出名为xxx.exe的可执行文件
 
+### go run
 也可以使用`go run hello.go`来执行, 使用类似脚本的形式.不推荐.
+
+### go install
+go install 分为两步:
+1, 先编译得到一个可执行文件
+2, 将可执行文件拷贝到`GOPATH/bin`目录下
 
 ## GOPATH
 GOPATH是一个需要手动配置的环境变量, 用于存放外接导入的包
@@ -75,3 +85,14 @@ set CGO_LDFLAGS=-g -O2
 set PKG_CONFIG=pkg-config
 set GOGCCFLAGS=-m64 -mthreads -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=C:\Users\root\AppData\Local\Temp\go-build641561570=/tmp/go-build -gno-record-gcc-switches
 ```
+
+## Go开发推荐的项目目录结构
+### 个人开发者
+写着玩
+![](_v_images/20200107131657180_22321.png)
+
+正规一点
+![](_v_images/20200107131819131_22044.png)
+
+### 企业开发者
+![](_v_images/20200107131949975_653.png)
