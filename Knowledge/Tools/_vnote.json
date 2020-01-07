@@ -86,6 +86,9 @@
         },
         {
             "name": "vi"
+        },
+        {
+            "name": "vscode"
         }
     ],
     "version": "1"

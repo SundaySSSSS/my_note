@@ -6,6 +6,88 @@ Go一行不能写两条语句
 Go中import的包没有使用, 不能编译通过. 声明但不使用的变量也不能编译通过
 Go中package语句和import的语句之间不能有全局变量定义
 
+## 变量
+变量只能以下划线和字母开头, 只能由字母, 数字, 下划线构成(和C一样)
+
+go语言中的变量必须先声明再使用
+go语言中局部变量声明后必须使用, 否则编译不过去
+全局变量可以声明后不使用
+
+### 常规声明
+``` go
+var 变量名 类型
+var name string
+var age int
+```
+### 声明变量的同时赋值
+``` go
+var s1 string = "name"
+```
+### 变量类型推导
+不指定类型, 由编译器自行推到变量的类型来完成初始化
+``` go
+var s = "name"
+var age = 18
+```
+### 简短变量声明
+只能在函数内部使用, 不能在全局使用
+``` go
+s := "varvarvar" //相当于var s = "varvarvar"
+```
+### 匿名变量
+匿名变量用一个下划线_表示, 表明不关心此变量
+匿名变量不会占用命名空间, 不会分配内存
+``` go
+func foo() (int, string) {
+	return 10, "name"
+}
+
+func testAnonymousVar() {
+	var x int
+	x, _ = foo()
+	fmt.Println(x)
+}
+```
+### 批量声明
+``` go
+var (
+    name string
+    age int
+    isOk bool
+)
+```
+
+## 常量
+在运行期间不会改变的量
+常量定义之后不能修改
+### 基本用法
+``` go
+const pi = 3.14159265
+```
+### 批量声明
+``` go
+const (
+    statusOK = 200
+    notFound = 404
+)
+
+const (
+    n1 = 100
+    n2 //没有指明值, 则和上一行一致, 即为100
+    n3 //同上
+)
+```
+
+### 常量计数器iota
+``` go
+const (
+    a = iota // 0, 会自动增加, 类似枚举
+    b // 1
+    c // 2
+    d // 3
+)
+```
+
 ## 数据类型
 ### bool
 ### rune
@@ -66,7 +148,7 @@ y, z = "C", "C++"
 ```
 这种自行推断的方式, 不能用于函数以外. (全局变量不能这么用)
 
-## #const
+## const
 ``` Go
 const PI = 3.14159265
 const hello string = "cxy"
