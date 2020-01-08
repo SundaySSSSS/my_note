@@ -79,6 +79,9 @@ const (
 ```
 
 ### 常量计数器iota
+iota是go语言中的常量计数器, 只能在常量表达式中使用
+iota在const关键字出现时将被重置为0, const中每新增**一行**,iota将计数一次
+可以定义类似枚举的东西
 ``` go
 const (
     a = iota // 0, 会自动增加, 类似枚举
@@ -86,16 +89,159 @@ const (
     c // 2
     d // 3
 )
+
+//插队情况
+const (
+    a1 = iota //0
+    a2 = 100    //100
+    a3 = iota //2    由于const出现时,iota才被重置为0, 故这里不会被重置
+    a4 //3
+)
+
+//多变量声明在一行的情况
+//const中每新增一行,iota将计数一次
+const (
+    b1, b2 = iota + 1, iota + 2    //b1 = 1, b2 = 2
+    b3, b4 = iota + 1, iota + 2    //b3 = 2, b4 = 3
+)
+
+//定义数量级
+const (
+    _ = iota
+    KB = 1 << (10 * iota)
+    MB = 1 << (10 * iota)
+    GB = 1 << (10 * iota)
+)
 ```
 
 ## 数据类型
 ### bool
-### rune
+bool类型只有true和false两个值.
+默认为false
+不允许将整型强制转换为布尔类型
+布尔类型不能参与数值运算, 也无法与其他类型进行转换
+
 ### byte
 ### int8 int16 int32 int64
 ### uint8 uint16 uint32 uint64
+### int uint
+在32位操作系统上是int32/uint32, 64位操作系统上是int64/uint64
+
 ### float32 float64
+float32的最大值被定义在`math.MaxFloat32`中
+```
+f := 1.23456 //f的类型会默认为float64
+f32 := float32(1.23456)    //float32类型的
+```
+
+### complex64 complex128
+``` Go
+var x complex64 = 6 + 2i
+```
+
+### uintptr
+无符号整型, 用于存放一个指针
+
 ### string
+go语言的字符串的内部实现使用UTF-8编码, 只能用双引号来表示
+``` go
+s1 := "hello"
+```
+单引号表示的是字符
+``` go
+c1 := 'h'
+c2 := '好'
+```
+一个字符'A'占一个字节
+一个utf8编码的汉字'好'一般占3个字节
+``` go
+c1 := '好'
+c2 := 'h'
+fmt.Printf("%T\n", c1) //结果为int32
+fmt.Printf("%T\n", c2) //结果为int32
+```
+
+#### 转义字符
+```
+\r 回车(返回行首)
+\n 换行
+\t 制表符
+\' 单引号
+\" 双引号
+\\ 反斜杠
+```
+
+#### 多行的字符串
+用点表示多行字符串, 注意不是单引号
+``` go
+s1 := `
+		明月几时有
+		把酒问青天
+		不知天上宫阙
+		今夕是何年	
+	`
+fmt.Println(s1)
+```
+
+#### 字符串常用操作
+``` go
+len(str) //求长度
++ 或 fmt.Sprintf    //拼接字符串
+strings.Split //分割
+strings.contains //判断是否包含
+strings.HasPrefix //前缀判断
+strings.HasSuffix //后缀判断
+strings.Index()  或 strings.LastIndex() //子串出现的位置
+strings.Join(a[]string, sep string) //join操作
+```
+例子
+``` go
+
+//字符串长度
+s2 := "hello世界"
+fmt.Printf("%s len %d\n", s2, len(s2))
+
+for _, c := range s2 {
+	fmt.Printf("%c \n", c)
+} 
+//输出结果:
+//hello世界 len 11
+//h
+//e
+//l
+//l
+//o
+//世
+//界
+
+
+//字符串拼接
+s3 := " world"
+fmt.Printf(s2 + s3 + "\n")
+s4 := fmt.Sprintf("%s%s\n", s2, s3)
+fmt.Println(s4)
+
+//分割字符串
+s5 := "D:\\Develop\\go\\bin"
+ret := strings.Split(s5, "\\")
+fmt.Println(ret) //[D: Develop go bin]
+
+//包含判定
+fmt.Println(strings.Contains(s5, "D")) //true
+
+//前缀后缀判定
+fmt.Println(strings.HasPrefix(s5, "D:"))  //true
+fmt.Println(strings.HasSuffix(s5, "bin")) //true
+
+s6 := "abcdefg"
+fmt.Println(strings.Index(s6, "bc"))     //1
+fmt.Println(strings.LastIndex(s6, "de")) //3
+
+//拼接
+fmt.Println(strings.Join(ret, "\\")) //D:\Develop\go\bin
+
+```
+
 ### array slice
 array是静态数据, 定义之后大小不可变
 ``` Go
@@ -116,13 +262,35 @@ x := [5]int{0, 1, 2, 3, 4}
 y := x[1:3]    //前闭后开区间, y的值为1, 2
 ```
 
+### rune
 ### map
-### complex64 complex128
-``` Go
-var x complex64 = 6 + 2i
+
+## 进制
+``` go
+func testHexOct() {
+	var a int = 10
+	fmt.Printf("%d\n", a)
+	fmt.Printf("%b\n", a) //二进制打印
+	var b int = 077       //八进制
+	fmt.Printf("%o\n", b) //八进制打印
+	var c int = 0xff      //十六进制
+	fmt.Printf("%x\n", c) //十六进制打印
+}
 ```
 
-
+## fmt Print
+```
+%d 十进制
+%b 二进制
+%o 八进制
+%x 十六进制
+%T 打印类型 例如 fmt.Printf("%T\n", a) 可能打印出int
+%f 打印浮点数
+%s 打印字符串
+%v 打印值, 万能 
+fmt.Printf("字符串: %s\n", s)  //输出为  字符串: Hello 世界
+fmt.Printf("字符串: %#V\n", s) //输出为  字符串: "Hello 世界"
+```
 ## 关键字
 ### package 
 go 通过package来组织
