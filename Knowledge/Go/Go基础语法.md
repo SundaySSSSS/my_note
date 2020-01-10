@@ -121,7 +121,6 @@ bool类型只有true和false两个值.
 不允许将整型强制转换为布尔类型
 布尔类型不能参与数值运算, 也无法与其他类型进行转换
 
-### byte
 ### int8 int16 int32 int64
 ### uint8 uint16 uint32 uint64
 ### int uint
@@ -242,6 +241,26 @@ fmt.Println(strings.Join(ret, "\\")) //D:\Develop\go\bin
 
 ```
 
+#### 字符串的修改
+字符串不能直接修改, 如下代码会报错
+``` go
+//错误!!!
+str := "白萝卜"
+str[0] = '红'
+```
+如果需要修改, 要先强制转换为rune切片
+``` go
+str := "白萝卜"
+//str[0] = '红'
+temp := []rune(str)
+temp[0] = '红'
+fmt.Println(string(temp))
+```
+
+### rune和byte
+go中字符有两种类型, uint8或者byte类型, 代表ASCII码中的一个字符
+rune类型代表一个UTF-8字符, rune实际是一个int32
+
 ### array slice
 array是静态数据, 定义之后大小不可变
 ``` Go
@@ -262,7 +281,7 @@ x := [5]int{0, 1, 2, 3, 4}
 y := x[1:3]    //前闭后开区间, y的值为1, 2
 ```
 
-### rune
+
 ### map
 
 ## 进制
@@ -291,6 +310,14 @@ func testHexOct() {
 fmt.Printf("字符串: %s\n", s)  //输出为  字符串: Hello 世界
 fmt.Printf("字符串: %#V\n", s) //输出为  字符串: "Hello 世界"
 ```
+
+## 流程控制
+### if
+
+### for
+### switch
+### goto
+
 ## 关键字
 ### package 
 go 通过package来组织
