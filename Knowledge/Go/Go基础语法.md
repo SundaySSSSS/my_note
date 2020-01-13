@@ -313,10 +313,225 @@ fmt.Printf("字符串: %#V\n", s) //输出为  字符串: "Hello 世界"
 
 ## 流程控制
 ### if
-
+``` go
+func testIf() {
+	age := 8
+	if age > 18 {
+		fmt.Println("men")
+	} else if age > 5 {
+		fmt.Println("boy")
+	} else {
+		fmt.Println("baby")
+	}
+}
+```
 ### for
+#### 基本模式
+``` go
+    for i := 0; i < 10; i++ {
+		fmt.Print(i)
+	}
+```
+#### 变种形式
+``` go
+	j := 5
+	for ; j < 10; j++ {
+		fmt.Print(j)
+	}
+```
+
+``` go
+	fmt.Println()
+	var k = 5
+	for k < 10 {
+		fmt.Print(k)
+		k++
+	}
+```
+#### 死循环
+``` go
+    //死循环
+	for {
+
+		break //终止死循环
+	}
+```
+
+#### for range循环
+``` go
+    //for range
+	s := "hello"
+	for i, v := range s {
+		fmt.Printf("%d, %c\n", i, v)
+	}
+```
+
+#### 控制for循环
+##### break
+使用后跳出for循环, 和C相同
+##### continue
+使用后继续下一次循环, 和C相同
+
 ### switch
+#### 常规switch
+``` go
+var i = 3
+switch i {
+case 1:
+	fmt.Println("a")
+case 2:
+	fmt.Println("b")
+case 3:
+	fmt.Println("c")
+default:
+	fmt.Println("z")
+}
+```
+#### case多个值
+``` go
+var n = 2
+switch n {
+case 1, 3, 5, 7, 9:
+	fmt.Println("奇数")
+case 2, 4, 6, 8:
+	fmt.Println("偶数")
+}
+```
+
+#### fallthrough
+不推荐使用, 可以执行下一个case
+``` go
+var m = 3
+switch m {
+case 3:
+	fmt.Print("3")
+	fallthrough
+case 4:
+	fmt.Print("4")
+}
+//输出为34
+```
 ### goto
+不推荐使用
+``` go
+func testGoto() {
+	fmt.Println("111")
+	goto end
+	fmt.Println("222")
+end:
+	fmt.Println("end")
+}
+```
+
+## 运算符
+### 算数运算符
++-*/%
+%为取余
+和C相同
+
+### ++ -- 不是运算符
+++ -- 在go中是单独的语句
+不能放在=的右边
+```
+a = a--
+b = b++
+```
+
+### 关系运算符
+``` go
+==
+>=
+<=
+!=
+>
+<
+```
+
+### 逻辑运算符
+&& 与
+|| 或
+! 非
+
+### 位运算符
+``` go
+& 按位与
+| 按位或
+^ 异或
+<< 左移
+>> 右移
+```
+
+### 赋值运算符
+``` go
+=
++=
+-+
+*=
+/=
+%=
+<<=
+>>=
+&=
+|=
+^=
+```
+
+## 数组
+和C的数组一样, 定义后大小不能变, 必须存放同一种类型的数据
+### 定义数组
+``` go
+var a1 [3]bool
+```
+
+### 初始化
+如果数组不初始化, 则默认元素都是零值
+#### 常规初始化
+``` go
+var a1 [3]bool
+a1 = [3]bool{true, false, true}
+fmt.Println(a1)
+```
+
+#### 根据初始值自动推断数组的长度
+``` go
+a100 := [...]int{0, 1, 2, 3, 4, 5}
+fmt.Println(a100)
+```
+
+#### 部分赋值
+``` go
+//前两个元素为1, 2, 后面的默认
+a3 := [5]int{1, 2}
+fmt.Println(a3)
+//[1 2 0 0 0]
+
+//第0个元素为4, 第3个元素为2, 其余默认
+a4 := [5]int{0: 4, 3: 2}
+fmt.Println(a4)
+//[4 0 0 2 0]
+```
+
+### 数组的遍历
+``` go
+    names := [...]string{"Tom", "Jerry", "Ben"}
+    //方法一
+	for i := 0; i < len(names); i++ {
+		fmt.Println(names[i])
+	}
+	//Tom
+	//Jerry
+	//Ben
+    
+    //方法二
+	for i, v := range names {
+		fmt.Println(i, v)
+	}
+	//0 Tom
+	//1 Jerry
+	//2 Ben
+```
+
+### 多维数组
 
 ## 关键字
 ### package 
