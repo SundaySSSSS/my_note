@@ -281,9 +281,57 @@ x := [5]int{0, 1, 2, 3, 4}
 y := x[1:3]    //前闭后开区间, y的值为1, 2
 ```
 
-
 ### map
+``` go
+func testMap() {
+	var m1 map[string]int //定义了一个key为string类型, value为int类型的map
+	//m1["曹操"] = 1          //崩溃, 因为map尚未初始化, 是nil
+	m1 = make(map[string]int, 10) //10为估计的容量, 可以自动扩容, 但尽量提前估算好容量
+	m1["曹操"] = 1
+	m1["刘备"] = 2
+	fmt.Println(m1) //map[刘备:2 曹操:1]
+	value, ok := m1["孙权"]
+	if !ok {
+		fmt.Println("孙权不在map中")
+	} else {
+		fmt.Println(value)
+	}
 
+	//遍历
+	for k, v := range m1 {
+		fmt.Println(k, v)
+	}
+	//曹操 1
+	//刘备 2
+
+	//删除
+	delete(m1, "刘备") //map[曹操:1]
+	fmt.Println(m1)
+
+	//删除不存在的key
+	delete(m1, "孙权") //不做任何操作
+}
+```
+
+### 自定义类型
+两种方式:
+1: `type myInt int`在main包中定义的新类型
+2: `type yourInt int`, 只会在代码中出现, 编译完成后不会有此类型
+测试代码如下
+```go
+type myInt int
+type yourInt = int
+
+func testType() {
+	var n myInt
+	n = 100
+	fmt.Printf("%T\n", n) //main.myInt
+
+	var m yourInt
+	m = 200
+	fmt.Printf("%T\n", m) //int
+}
+```
 ## 进制
 ``` go
 func testHexOct() {
@@ -898,10 +946,34 @@ func testClosure() {
 	txtFunc := makeSuffixFunc(".txt")
 	fmt.Println(jpgFunc("test")) //test.jpg
 	fmt.Println(txtFunc("test")) //test.txt
-
 }
 
 ```
+
+## panic和recover
+go1.12版本中没有异常机制, 但是使用panic/recover可以处理错误.
+panic可以在任何地方引发, 但recover只有在defer调用的函数中有效
+``` go
+func testPanic() {
+	defer func() {
+		err := recover()
+		fmt.Println("恢复处理", err)
+	}()
+	panic("出现了严重的错误!!!!!")
+	fmt.Println("111")
+}
+```
+注意:
+recover必须配合defer使用
+defer一定要在可能引发panic的语句之前定义
+
+## 内置函数
+close :主要用来关闭channel
+len
+new : 返回的是指针
+make : 返回引用类型, 比如chan, map, slice
+append
+panic和recover
 
 ## 关键字
 ### package 
