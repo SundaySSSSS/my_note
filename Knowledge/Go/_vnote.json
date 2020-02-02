@@ -1,188 +1,20 @@
 {
     "created_time": "2019-04-23T11:06:34Z",
     "files": [
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-04-23T11:53:37Z",
-            "modified_time": "2020-01-07T05:39:33Z",
-            "name": "Go环境.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-04-26T05:00:53Z",
-            "modified_time": "2020-01-18T03:10:16Z",
-            "name": "Go基础语法.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-18T02:41:00Z",
-            "modified_time": "2020-01-19T14:38:20Z",
-            "name": "Go结构体.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-19T11:11:21Z",
-            "modified_time": "2020-01-19T13:38:22Z",
-            "name": "Go方法和接收者.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-19T15:07:01Z",
-            "modified_time": "2020-01-19T15:21:48Z",
-            "name": "Go结构体转Json.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-05-04T02:28:29Z",
-            "modified_time": "2019-05-05T05:21:15Z",
-            "name": "Go vs Cpp.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-05-09T05:47:46Z",
-            "modified_time": "2019-05-09T06:00:58Z",
-            "name": "Go面向对象.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-05-14T09:11:14Z",
-            "modified_time": "2020-01-20T14:10:58Z",
-            "name": "Go接口(interface)和多态.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-23T03:26:11Z",
-            "modified_time": "2020-01-23T04:11:04Z",
-            "name": "Go包(package).md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-05-14T09:54:00Z",
-            "modified_time": "2020-02-02T06:28:16Z",
-            "name": "Go goroutine.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-05-15T01:43:06Z",
-            "modified_time": "2020-02-01T02:57:25Z",
-            "name": "Go channel.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-05-15T05:40:48Z",
-            "modified_time": "2019-05-15T09:30:26Z",
-            "name": "Go 并发模式.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-23T04:59:42Z",
-            "modified_time": "2020-01-27T03:29:15Z",
-            "name": "Go文件操作.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-27T03:29:34Z",
-            "modified_time": "2020-01-27T04:52:10Z",
-            "name": "Go time包.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-30T00:47:44Z",
-            "modified_time": "2020-01-30T00:48:31Z",
-            "name": "Go 日志模块.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-01-31T03:22:44Z",
-            "modified_time": "2020-01-31T04:02:17Z",
-            "name": "Go反射.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-02-01T02:58:44Z",
-            "modified_time": "2020-02-02T03:47:49Z",
-            "name": "Go select.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2020-02-02T04:44:01Z",
-            "modified_time": "2020-02-02T06:28:38Z",
-            "name": "Go 同步操作.md",
-            "tags": [
-            ]
-        }
     ],
     "sub_directories": [
+        {
+            "name": "环境和基础语法"
+        },
+        {
+            "name": "并发"
+        },
+        {
+            "name": "Go标准库"
+        },
+        {
+            "name": "Go网络编程"
+        }
     ],
     "version": "1"
 }
