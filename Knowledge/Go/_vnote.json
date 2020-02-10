@@ -4,16 +4,10 @@
     ],
     "sub_directories": [
         {
-            "name": "环境和基础语法"
+            "name": "Go基础知识"
         },
         {
-            "name": "并发"
-        },
-        {
-            "name": "Go标准库"
-        },
-        {
-            "name": "Go网络编程"
+            "name": "Go实战"
         }
     ],
     "version": "1"

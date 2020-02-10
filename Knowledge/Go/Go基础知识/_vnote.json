@@ -1,0 +1,29 @@
+{
+    "created_time": "2020-02-03T12:24:10Z",
+    "files": [
+    ],
+    "sub_directories": [
+        {
+            "name": "Go环境"
+        },
+        {
+            "name": "Go基础语法"
+        },
+        {
+            "name": "Go测试"
+        },
+        {
+            "name": "Go网络编程"
+        },
+        {
+            "name": "Go标准库"
+        },
+        {
+            "name": "Go并发"
+        },
+        {
+            "name": "Go数据库"
+        }
+    ],
+    "version": "1"
+}
