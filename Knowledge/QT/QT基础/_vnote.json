@@ -4,6 +4,9 @@
     ],
     "sub_directories": [
         {
+            "name": "环境"
+        },
+        {
             "name": "概念"
         },
         {
