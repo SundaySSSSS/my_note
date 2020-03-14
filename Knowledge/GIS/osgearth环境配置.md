@@ -1,11 +1,11 @@
 
-# 1. 整体概述
+# 整体概述
 OSG 三维场景图渲染与调度引擎
 osgEarth, 具有GIS功能的, OSG拓展
 VPB 一个可以生成高效动态调度地形的OSG拓展
 
-# 2. 环境准备
-## 2.1. 版本说明
+# 环境准备
+## 版本说明
 开发使用Qt5.12.0, VS2015编译
 OpenSceneGraph-3.4.0 (3.6版本不再原生支持QT)
 osgearth-osgearth-2.9 (2.10版本不再原生支持QT)
@@ -13,17 +13,17 @@ proj-6.2.0
 gdal-2.2.1
 geos-3.5.1 (3.5.1和osgearth2.9兼容, 3.7.2和osgearth2.10.1兼容)
 
-## 2.2. OSG
-### 2.2.1. 下载OSG
+## OSG
+### 下载OSG
 在中文官网`http://www.osgchina.org/`
 下载OSG源码`OpenSceneGraph-3.4.0.zip`
 基础数据`OpenSceneGraph-Data-3.0.0.zip`
 第三方库`3rdParty-vs2015-64-Full.zip`
 
-### 2.2.2. 解压
-解压缩即可, 其中第三方库可以使用环境变量OSG_3RDPARTY_DIR 来指定, 从而让CMAKE自动寻找到
+### 解压
+解压缩即可, 其中第三方库可以使用环境变量OSG_3RDPARTY_DIR 来指定(例如: `E:\Develop\osgearth\3rdParty-vs2015-64-Full`), 从而让CMAKE自动寻找到
 
-### 2.2.3. 编译OSG
+### 编译OSG
 解压源码包, 启动cmake, Configure
 设置ACTUAL_3RDPARTY_DIR 为第三方库的路径
 设置CMAKE_INSTALL_PREFIX为最终生成物放置的目录
@@ -34,7 +34,7 @@ GIFLIB, GLUT, JEPG, PNG, TIFF, ZLIB在设置了ACTUAL_3RDPARTY_DIR后, 再次点
 
 在CMake中Generate, OpenProject, 编译Release和Debug即可
 
-### 2.2.4. 环境变量的设置
+### 环境变量的设置
 `OSG_FILE_PATH` 设置为OSG数据的目录, 即`OpenSceneGraph-Data-3.0.0.zip`解压后的目录, 这里是`D:\OSG\data\OpenSceneGraph-Data-3.0.0`
 
 `OSG_SCREEN` 设置为0 表示使用多个显示器时, 使用第0个显示器
@@ -42,7 +42,7 @@ GIFLIB, GLUT, JEPG, PNG, TIFF, ZLIB在设置了ACTUAL_3RDPARTY_DIR后, 再次点
 `OSG_WINDOW` 设置为`100 100 800 600`
 这个参数表明在默认状态下, 窗体显示在哪个位置
 
-`PATH`中加入OSG编译出来源码的bin目录, 这里是
+`PATH`中加入OSG编译出来的bin目录, 这里是
 `D:\OSG\OpenSceneGraph-3.4.0\bin`
 
 `OSG_ROOT`设置为OSG文件夹目录, 此目录内应该有bin, include, lib子文件夹.
@@ -54,11 +54,11 @@ GIFLIB, GLUT, JEPG, PNG, TIFF, ZLIB在设置了ACTUAL_3RDPARTY_DIR后, 再次点
 如果出现一个紫色飞行器, 则表示成功
 ![](_v_images/20200213151123941_19352.png =238x)
 
-### 2.2.5. 编译OSG中遇到的问题
-#### 2.2.5.1. 关于OsgQt
+### 编译OSG中遇到的问题
+#### 关于OsgQt
 OSG的3.6版本不在原生编译OsgQt, 而自己编译却没有正确生成正确的动态库, 故推荐使用3.4.0, 原生自带编译OsgQt
 
-#### 2.2.5.2. 编译Osg3.4.0时, 无法打开输入文件“optimized.lib”
+#### 编译Osg3.4.0时, 无法打开输入文件“optimized.lib”
 1, 正常情况下，下图中会多出一项：ZLIB_LIBRARY_RELEASE，之后屡次编译，都提示“无法打开输入文件“optimized.lib””
 因为ZLIB_LIBRARY就相当于是ZLIB_LIBRARY_RELEASE，而配置过ZLIB_LIBRARY_RELEASE后会忽略ZLIB_LIBRARY，
 实际上，起作用的是ZLIB_LIBRARY，所以会发生错误“无法打开输入文件“optimized.lib””
@@ -75,18 +75,18 @@ OSG的3.6版本不在原生编译OsgQt, 而自己编译却没有正确生成正�
 3, 找到编译出问题的项目(osgdb_freetype,osgdb_jpeg)属性，顺便删除debug.lib
 ![](_v_images/20200215162839030_15341.png)
 
-## 2.3. 编译sqlite
+## 编译sqlite
 因为gdal3.0.1版本必须依赖geos库和sqlite，所以首先得把sqlite库编译完成。
-### 2.3.1. 下载
+### 下载
 下载地址
 `https://www.sqlite.org/2019/sqlite-amalgamation-3300100.zip`
 `https://www.sqlite.org/2019/sqlite-dll-win64-x64-3300100.zip`
 `https://www.sqlite.org/2019/sqlite-tools-win32-x86-3300100.zip`
 
-### 2.3.2. 建立空工程
+### 建立空工程
 使用VS2015创建一个Win32应用程序的项目, 将sqlite3.c、sqlite3.h、sqlite3ext.h、sqlite3.def四个文件添加到工程中
 
-### 2.3.3. 设置工程属性
+### 设置工程属性
 预处理设置：C/C++ --> 预处理器 --> 预处理器定义：设置预定义处理
 将内容改为:
 ```
@@ -104,17 +104,17 @@ SQLITE_ENABLE_UNLOCK_NOTIFY
 配置类型改为静态库lib
 ![](_v_images/20200213173300254_29231.png =698x)
 
-### 2.3.4. 生成解决方案
+### 生成解决方案
 x64\Release文件夹可以找到生成的lib库。在SQLite目录中分别创建include和lib和bin文件夹,将刚才生成的.lib文件放入lib文件夹中,将sqlite3.h、sqlite3ext.h放入include中，将sqlite-tools-win32-x86-3280000.zip中的sqlite3.exe放在bin文件夹中以备后用。
 
-### 2.3.5. 遇到的问题
-#### 2.3.5.1. 错误	C1853	“x64\Release\sqlite_project.pch”预编译头文件来自编译器的早期版本，或者预编译头为 C++ 而在 C 
+### 遇到的问题
+#### 错误	C1853	“x64\Release\sqlite_project.pch”预编译头文件来自编译器的早期版本，或者预编译头为 C++ 而在 C 
 解决方法:
 关闭预编译头
 ![](_v_images/20200213173921231_6181.png =607x)
 
 
-## 2.4. 编译proj
+## 编译proj
 下载proj`https://proj.org/download.html`
 解压
 打开CMAKE, 到proj解压后的目录
@@ -129,8 +129,15 @@ Configure后Generate
 之后OpenProject
 编译即可
 
-## 2.5. 编译geos
-### 2.5.1. 编译方法
+后续osgearth编译好之后, 加载tms等地图时, 还会出现需要proj.dll的情况
+故需要对proj编译为动态库
+其他步骤不变, 在CMake的Configure中勾选`BUILD_LIBPROJ_SHARED`
+![](_v_images/20200306162725431_26603.png)
+
+进行编译即可
+
+## 编译geos
+### 编译方法
 下载geos
 `http://download.osgeo.org/geos/`
 目前测试3.7.2和3.5.1可以使用此方法, 3.4.0此方法不适用
@@ -175,8 +182,8 @@ nmake /f makefile.vc devinstall
 Configure, Generate, OpenProject
 编译完成
 
-### 2.5.2. 问题
-#### 2.5.2.1. CMake提示错误, Unknown CMake command "GenerateSourceGroups"
+### 问题
+#### CMake提示错误, Unknown CMake command "GenerateSourceGroups"
 
 在如下链接下载GenerateSourceGroups.cmake文件
 `https://trac.osgeo.org/geos/browser/trunk/cmake/modules`
@@ -185,7 +192,7 @@ Configure, Generate, OpenProject
 在本机是`E:\Program Files\CMake\share\cmake-3.15\Modules`
 然后点击configure，不再报错
 
-## 2.6. 编译gdal
+## 编译gdal
 下载gdal
 `http://download.osgeo.org/gdal/2.4.4/gdal244.zip`
 
@@ -222,7 +229,7 @@ nmake /f makefile.vc install
 nmake /f makefile.vc devinstall
 ```
 
-## 2.7. 编译osgEarth
+## 编译osgEarth
 由于2.10版本的osgEarth移除了osgEarthQt, 故需要自己编译, 但目前没有编译成功, 故使用2.9版本
 下载`http://osgearth.org/`
 解压, 使用CMake进行编译
@@ -246,18 +253,21 @@ OSGEARTH_QT_BUILD_LEGACY_WIDGET
 
 之后, Generate, Open Project, 编译Debug和Release即可
 
-### 2.7.1. 遇到的问题
-#### 2.7.1.1. 无法打开包括文件: “geos/geom/Geometry.h”: No such file or directory	
+### 遇到的问题
+#### 无法打开包括文件: “geos/geom/Geometry.h”: No such file or directory	
 是geos库和osgearth的版本不匹配导致的
 目前发现:
 osgearth2.10.1和geos3.7.2匹配
 osgearth2.9 和geos3.5.1匹配
 
-## 2.8. 编译OsgQt
-如下方法编译出来的动态库没有OsgQt.dll, 原因未知, 推荐使用3.4版本的Osg, 可以避免单独编译OsgQt
-下载OsgQt
-解压缩
-在CMakeLists.txt中加入如下内容
+## 编译OsgQt
+Osg3.6.4版本不再默认编译OsgQt, 需要单独编译.
+如果使用3.4版本的Osg, OsgQt则再编译Osg的时候完成编译
+
+### 编译步骤
+1. 下载OsgQt
+2. 解压缩
+3. 在CMakeLists.txt中加入如下内容(可略过)
 ```
 SET(DESIRED_QT_VERSION "5.12.0" CACHE STRING "")   
 SET(CMAKE_PREFIX_PATH "E:\\Qt\\Qt5.12.0\\5.12.0\\msvc2015_64" CACHE PATH "")
@@ -265,7 +275,7 @@ SET(CMAKE_PREFIX_PATH "E:\\Qt\\Qt5.12.0\\5.12.0\\msvc2015_64" CACHE PATH "")
 如图所示
 ![](_v_images/20200214192316461_12118.png =632x)
 
-将FIND_PACKAGE那行的OpenSceneGraph改为合适的版本
+4. 将CMakeLists.txt中FIND_PACKAGE那行的OpenSceneGraph改为合适的版本
 改两处, `OpenSceneGraph 3.6.3`和`OPENSCENEGRAPH_SOVERSION 156`
 ```
 FIND_PACKAGE(OpenSceneGraph 3.6.3 REQUIRED osgDB osgGA osgUtil osgText osgViewer osgWidget)
@@ -279,3 +289,19 @@ SET(OPENSCENEGRAPH_SOVERSION 156)
 
 在CMake中, Generate, OpenProject
 编译Release和Debug版本即可
+
+### 遇到的问题
+通过vs编译debug版本，正常通过；但编译release版本时报错
+```
+无法打开输入文件“optimized.lib”
+```
+解决方法：
+在osgQt项目中右键“属性”，选择“链接器”–“输入”–“附加依赖项”，删除其中的
+```
+optimized.lib
+debug.lib
+```
+重新编译release版本，正常通过。
+
+osgQt项目位置如下图所示:
+![](_v_images/20200309224518964_14953.png)
