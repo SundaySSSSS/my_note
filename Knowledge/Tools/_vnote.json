@@ -89,6 +89,9 @@
         },
         {
             "name": "vscode"
+        },
+        {
+            "name": "fftw"
         }
     ],
     "version": "1"
